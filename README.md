@@ -2,3 +2,6 @@
 Just trying to rewrite `c_piscine` functions in a rust way.
 
 ### Feedback is welcome
+---
+### Co-Author
+- Deepseek

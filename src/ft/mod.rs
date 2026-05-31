@@ -1,9 +1,16 @@
-mod putchar;
-mod putstr;
-mod strlen;
-mod putnbr;
+macro_rules! pub_mod {
+	($($mod:ident), * $(,)?) => {
+		$(
+			pub mod $mod;
+			pub use $mod::*;
+		)*
+	};
+}
 
-pub use putchar::*;
-pub use putstr::*;
-pub use strlen::*;
-pub use putnbr::*;
+pub_mod!(
+	putchar,
+	putstr,
+	strlen,
+	putnbr,
+	print_alphabet,
+);

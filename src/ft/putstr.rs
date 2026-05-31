@@ -9,3 +9,9 @@ pub	fn putstr(s: &str) {
 		);
 	}
 }
+
+pub fn putstrln(s: &str) {
+	putstr(s);
+	let nl = [b'\n'].as_ptr() as *const c_void;
+	unsafe { write(1, nl, 1); }
+}
