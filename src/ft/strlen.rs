@@ -1,4 +1,3 @@
-pub fn	strlen(s: &str) -> usize
-{
-	s.len()
+pub fn	strlen(s: &str) -> i32 {
+	s.len().try_into().unwrap()
 }
