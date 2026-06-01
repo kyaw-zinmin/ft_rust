@@ -7,6 +7,6 @@ pub fn putchar(c: &u8) {
 
 pub fn putcharln(c: u8) {
 	putchar(&c);
-	let nl = b'\n' as *const u8 as *const c_void;
+	let nl = [b'\n'].as_ptr() as *const c_void;
 	unsafe { write(1, nl, 1); }
 }
