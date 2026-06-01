@@ -1,5 +1,6 @@
 use crate::utils;
 
+#[allow(dead_code)]
 pub fn	compare_cases<T, E>(cases: &[(&str, &T, &E)], f: fn(&T)) 
 where
 	T: std::fmt::Display + ?Sized,
