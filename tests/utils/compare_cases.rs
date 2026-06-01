@@ -4,18 +4,21 @@ const RED: &str = "\x1b[31m";
 const RESET: &str = "\x1b[0m";
 
 pub trait MatchesOutput {
-	fn matches(&self, out: &[u8]) -> bool;
+	fn matches<T: std::fmt::Display>(&self, out: &[u8], input: &T);
 }
 impl MatchesOutput for str {
-	fn matches(&self, out: &[u8]) -> bool {
-		out == self.as_bytes()
+	fn matches<T: std::fmt::Display>(&self, out: &[u8], input: &T) {
+		print!("{}", RED);
+		assert_eq!(out, self.as_bytes(), "Failed for:{} {}", RESET, input);
 	}
 }
 impl MatchesOutput for i32 {
-	fn matches(&self, out: &[u8]) -> bool {
+	fn matches<T: std::fmt::Display>(&self, out: &[u8], input: &T) {
 		let s = String::from_utf8_lossy(out);
 		let s = s.trim_end_matches('\n');
-		s.parse::<i32>().ok() == Some(*self)
+		let s = s.parse::<i32>().ok();
+		print!("{}", RED);
+		assert_eq!(s, Some(*self), "Failed for:{} {}", RESET, input);
 	}
 }
 
@@ -29,6 +32,6 @@ where
 	in cases.iter().enumerate() {
 		utils::print_case((i + 1) as i32, desc);
 		let out: Vec<u8> = utils::capture_stdout(|| f(input));
-		assert!(expected.matches(&out), "{}Failed for:{} {}", RED, RESET, input);
+		expected.matches(&out, &input);
 	}
 }
