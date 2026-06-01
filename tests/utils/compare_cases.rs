@@ -1,5 +1,8 @@
 use crate::utils;
 
+const RED: &str = "\x1b[31m";
+const RESET: &str = "\x1b[0m";
+
 pub trait MatchesOutput {
 	fn matches(&self, out: &[u8]) -> bool;
 }
@@ -26,6 +29,6 @@ where
 	in cases.iter().enumerate() {
 		utils::print_case((i + 1) as i32, desc);
 		let out: Vec<u8> = utils::capture_stdout(|| f(input));
-		assert!(expected.matches(&out), "failed for {}", input);
+		assert!(expected.matches(&out), "{}Failed for:{} {}", RED, RESET, input);
 	}
 }
