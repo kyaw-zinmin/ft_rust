@@ -31,7 +31,7 @@ fn main() {
 fn print_arr(arr: Vec<String>) {
 	println!("cargo:warning=Missing test files: [");
 	for (i, value) in arr.iter().enumerate() {
-		println!("cargo:warning=  #{}: {}", i, value);
+		println!("cargo:warning=  #{}: {}", (i + 1), value);
 	}
 	println!("cargo:warning=]");
 }

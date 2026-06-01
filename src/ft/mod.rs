@@ -14,5 +14,6 @@ pub_mod!(
 	putnbr,
 	print_alphabet,
 	print_reverse_alphabet,
-	print_numbers
+	print_numbers,
+	is_negative
 );
