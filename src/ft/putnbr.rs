@@ -19,6 +19,6 @@ pub	fn putnbr(mut nbr: i32) {
 
 pub	fn putnbrln(nbr: i32) {
 	putnbr(nbr);
-	let nl = b'\n' as *const u8 as *const c_void;
+	let nl = [b'\n'].as_ptr() as *const c_void;
 	unsafe { write(1, nl, 1); }
 }
