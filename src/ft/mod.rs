@@ -13,5 +13,6 @@ pub_mod!(
 	strlen,
 	putnbr,
 	print_alphabet,
-	print_reverse_alphabet
+	print_reverse_alphabet,
+	print_numbers
 );
