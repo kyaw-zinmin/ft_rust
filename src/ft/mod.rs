@@ -16,5 +16,6 @@ pub_mod!(
 	print_reverse_alphabet,
 	print_numbers,
 	is_negative,
-	print_comb
+	print_comb,
+	print_comb2
 );
