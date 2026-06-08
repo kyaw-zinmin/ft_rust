@@ -23,6 +23,9 @@ impl MatchesOutput for i32 {
 }
 
 #[allow(dead_code)]
+///	Tip: useful for functions that print to stdout.
+/// 
+/// Reason: expected value is most of the time: `&str`
 pub fn	compare_cases<T, E>(cases: &[(&str, &T, &E)], f: fn(&T)) 
 where
 	T: std::fmt::Display + ?Sized,
