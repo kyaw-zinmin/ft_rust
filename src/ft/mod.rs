@@ -17,5 +17,6 @@ pub_mod!(
 	print_numbers,
 	is_negative,
 	print_comb,
-	print_comb2
+	print_comb2,
+	print_combn
 );
