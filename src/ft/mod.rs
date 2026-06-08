@@ -18,5 +18,6 @@ pub_mod!(
 	is_negative,
 	print_comb,
 	print_comb2,
-	print_combn
+	print_combn,
+	fortytwo,
 );
