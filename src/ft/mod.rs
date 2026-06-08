@@ -20,4 +20,5 @@ pub_mod!(
 	print_comb2,
 	print_combn,
 	fortytwo,
+	div_mod
 );
